@@ -17,7 +17,7 @@
 
  You should have received a copy of the GNU General Public License
  along with openIEC61850-redis. If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package redis61850;
 
@@ -52,7 +52,7 @@ public class RedisListener implements Runnable, ServerEventListener {
 	private HashMap<String, BasicDataAttribute> redisToMms;
 	private HashMap<String, String> mmsToRedis;
 	private Properties p;
-	
+
 	public RedisListener(ServerSap serverSap, Properties p) {
 		String hostString = p.getProperty("REDIS_HOST");
 		String portString = p.getProperty("REDIS_PORT");
@@ -78,38 +78,38 @@ public class RedisListener implements Runnable, ServerEventListener {
 	public void stop() {
 		jpool.destroy();
 	}
-	
+
 	public void psubscribe(JedisPubSub resource, String pattern) {
 		Jedis jedis = jpool.getResource();
 		jedis.psubscribe(resource, pattern);
 	}
-	
-    @Override
-    public void serverStoppedListening(ServerSap serverSap) {
-        System.out.println("The SAP stopped listening");
-    }
 
-    @Override
-    public List<ServiceError> write(List<BasicDataAttribute> bdas) {
-    	Jedis jedis = jpool.getResource();
-        for (BasicDataAttribute bda : bdas) {
-            System.out.println("got a write request: " + bda);
-            // write to Redis
-            String redisKey = mmsToRedis.get(bda.getReference().toString());
-            System.out.println("Redis key: " + redisKey);
-            if (redisKey == null) {
-            	continue;
-            }
-            try {
-            	set(jedis, redisKey, getBdaValue(bda));
-            } catch (IllegalArgumentException e) {
-            	System.out.println(e.getMessage());
-            	continue;
-            }
-        }
-        return null;
-    }
-    
+	@Override
+	public void serverStoppedListening(ServerSap serverSap) {
+		System.out.println("The SAP stopped listening");
+	}
+
+	@Override
+	public List<ServiceError> write(List<BasicDataAttribute> bdas) {
+		Jedis jedis = jpool.getResource();
+		for (BasicDataAttribute bda : bdas) {
+			System.out.println("got a write request: " + bda);
+			// write to Redis
+			String redisKey = mmsToRedis.get(bda.getReference().toString());
+			System.out.println("Redis key: " + redisKey);
+			if (redisKey == null) {
+				continue;
+			}
+			try {
+				set(jedis, redisKey, getBdaValue(bda));
+			} catch (IllegalArgumentException e) {
+				System.out.println(e.getMessage());
+				continue;
+			}
+		}
+		return null;
+	}
+
 	private void readDatamap() {
 		BufferedReader br = null;
 		FileReader fr = null;
@@ -143,7 +143,7 @@ public class RedisListener implements Runnable, ServerEventListener {
 			}
 		}
 	}
-	
+
 	private void parseLine(String[] fields) {
 		String ld = fields[0];
 		String var61850 = fields[1];
@@ -172,7 +172,7 @@ public class RedisListener implements Runnable, ServerEventListener {
 			mmsToRedis.put(bda.getReference().toString(), varRedis);
 		}
 	}
-	
+
 	// TODO: handle more types (timestamps, booleans...)
 	private String getBdaValue(BasicDataAttribute bda) {
 		String valueString;
@@ -208,19 +208,19 @@ public class RedisListener implements Runnable, ServerEventListener {
 		}
 		return valueString;
 	}
-	
+
 	protected JedisPool getPool() {
 		return jpool;
 	}
-	
+
 	protected ServerSap getServerSap() {
 		return serverSap;
 	}
-	
+
 	protected HashMap<String, BasicDataAttribute> getRedisToMms() {
 		return redisToMms;
 	}
-	
+
 	protected String get(Jedis j, String tag) {
 		String value = null;
 		if (isHash(tag) == false) {
@@ -233,7 +233,7 @@ public class RedisListener implements Runnable, ServerEventListener {
 		}
 		return value;
 	}
-	
+
 	protected void set(Jedis j, String tag, String value) {
 		if (isHash(tag) == false) {
 			j.set(tag, value);
@@ -245,7 +245,7 @@ public class RedisListener implements Runnable, ServerEventListener {
 		}
 		return;
 	}
-	
+
 	protected boolean isHash(String tag) {
 		return tag.contains("/");
 	}

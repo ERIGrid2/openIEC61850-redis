@@ -17,7 +17,7 @@
 
  You should have received a copy of the GNU General Public License
  along with openIEC61850-redis. If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package redis61850;
 
@@ -144,8 +144,8 @@ public class RedisSubscriber extends JedisPubSub {
 		else {
 			throw new IllegalArgumentException();
 		}
-        List<BasicDataAttribute> bdas = new ArrayList<>();
-        bdas.add(bda);
-        serverSap.setValues(bdas);
+		List<BasicDataAttribute> bdas = new ArrayList<>();
+		bdas.add(bda);
+		serverSap.setValues(bdas);
 	}
 }
