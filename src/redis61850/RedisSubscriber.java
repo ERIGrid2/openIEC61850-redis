@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.openmuc.openiec61850.BasicDataAttribute;
+import org.openmuc.openiec61850.BdaDoubleBitPos;
 import org.openmuc.openiec61850.BdaFloat32;
 import org.openmuc.openiec61850.BdaFloat64;
 import org.openmuc.openiec61850.BdaInt16;
@@ -140,6 +141,16 @@ public class RedisSubscriber extends JedisPubSub {
 		else if (bda instanceof BdaInt64) {
 			long value = Long.parseLong(valueString);
 			((BdaInt64) bda).setValue(value);
+		}
+		else if (bda instanceof BdaDoubleBitPos) {
+			byte[] value = new byte[] { (byte) 0xC0 }; // BAD_STATE
+			if (valueString.equals("0")) {
+				value[0] = 0x40; // OFF
+			}
+			if (valueString.equals("1")) {
+				value[0] = (byte) 0x80; // ON
+			}
+			((BdaDoubleBitPos) bda).setValue(value);
 		}
 		else {
 			throw new IllegalArgumentException();

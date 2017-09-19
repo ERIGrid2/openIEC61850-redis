@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import org.openmuc.openiec61850.BasicDataAttribute;
+import org.openmuc.openiec61850.BdaDoubleBitPos;
 import org.openmuc.openiec61850.BdaFloat32;
 import org.openmuc.openiec61850.BdaFloat64;
 import org.openmuc.openiec61850.BdaInt16;
@@ -202,6 +203,16 @@ public class RedisListener implements Runnable, ServerEventListener {
 		}
 		else if (bda instanceof BdaInt64) {
 			valueString = ((BdaInt64) bda).getValue() + "";
+		}
+		else if (bda instanceof BdaDoubleBitPos) {
+			byte[] value = ((BdaDoubleBitPos) bda).getValue(); 
+			valueString = "0";
+		        if ((value[0] & 0x80) == 0x80) {
+		        	valueString = "1"; // ON
+		        }
+		        if ((value[0] & 0x40) == 0x40) {
+		        	valueString = "0"; // OFF
+		        }
 		}
 		else {
 			throw new IllegalArgumentException();
