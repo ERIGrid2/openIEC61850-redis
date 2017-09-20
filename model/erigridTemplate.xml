@@ -77,6 +77,10 @@
 			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
 			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
 			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
+			<DO name="TotW" type="MV" /><!-- O-->
+			<DO name="TotVAr" type="MV" /><!-- O-->
+			<DO name="PPV" type="DEL" /><!-- O-->
+			<DO name="PNV" type="WYE" /><!-- O-->
 		</LNodeType>
 		<LNodeType id="XCBR" lnClass="XCBR"> 
 			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode-->
