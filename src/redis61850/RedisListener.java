@@ -97,10 +97,10 @@ public class RedisListener implements Runnable, ServerEventListener {
 			System.out.println("got a write request: " + bda);
 			// write to Redis
 			String redisKey = mmsToRedis.get(bda.getReference().toString());
-			System.out.println("Redis key: " + redisKey);
 			if (redisKey == null) {
 				continue;
 			}
+			System.out.println("Redis key: " + redisKey);
 			try {
 				set(jedis, redisKey, getBdaValue(bda));
 			} catch (IllegalArgumentException e) {
@@ -125,6 +125,7 @@ public class RedisListener implements Runnable, ServerEventListener {
 				}
 				String[] fields = sCurrentLine.split("\t");
 				// see if we must read from Redis
+				
 				if (fields.length >= 3 && fields[2].startsWith("\"<<<")) {
 					parseLine(fields);
 				}

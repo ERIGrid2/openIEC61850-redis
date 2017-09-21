@@ -24,6 +24,8 @@ package redis61850;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.openmuc.openiec61850.BasicDataAttribute;
 import org.openmuc.openiec61850.BdaDoubleBitPos;
 import org.openmuc.openiec61850.BdaFloat32;
@@ -65,7 +67,7 @@ public class RedisSubscriber extends JedisPubSub {
 				setBdaValue(bda, value);
 			} catch (Exception e) {
 				System.out.println("The application does not support writing this type of basic data attribute.");
-				return;
+				continue;
 			}
 		}
 	}
@@ -74,7 +76,6 @@ public class RedisSubscriber extends JedisPubSub {
 	}
 
 	public void onPMessage(String pattern, String channel, String message) {
-		System.out.println(pattern + " " + channel + " " + message);
 		if (message.equals("set")) {
 			String varRedis = channel.split(":")[1];
 			String value = listener.get(jedis, varRedis);
@@ -89,6 +90,24 @@ public class RedisSubscriber extends JedisPubSub {
 				System.out.println("The application does not support writing this type of basic data attribute.");
 				return;
 			}
+		}
+		if (message.equals("hset")) {
+			String varRedis = channel.split(":")[1];
+			Map<String, String> values = jedis.hgetAll(varRedis);
+			for (String hashField: values.keySet()) {
+				BasicDataAttribute bda = redisToMms.get(varRedis + "/" + hashField);
+				if (bda == null) {
+					continue;
+				}
+				try {
+					String value = values.get(hashField);
+					System.out.println("Setting: " + bda + " with value: " + value);
+					setBdaValue(bda, value);
+				} catch (Exception e) {
+					System.out.println("The application does not support writing this type of basic data attribute.");
+					continue;
+				}
+			}	
 		}
 	}	
 
