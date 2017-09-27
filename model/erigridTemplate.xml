@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SCL xmlns="http://www.iec.ch/61850/2003/SCL"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd"
-	revision="B" version="2007">
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd" revision="B"
+	version="2007">
 	<Header id="ERIGrid_RI" nameStructure="IEDName" />
 	<Communication>
 		<SubNetwork name="RI_network" type="8-MMS">
@@ -48,10 +47,10 @@
 					<!-- ################ INSERT LOGICAL NODES HERE (SEE EXAMPLES BELOW) ################ -->
 					<!-- ################################################################################ -->
 					<!-- <LN lnType="MMXU1" lnClass="MMXU" inst="1"></LN> -->
-					<!-- <LN lnType="XCBR" lnClass="XCBR" inst="1"></LN>  -->
-					<!-- <LN lnType="XSWI" lnClass="XSWI" inst="1"></LN>  -->
+					<!-- <LN lnType="XCBR" lnClass="XCBR" inst="1"></LN> -->
+					<!-- <LN lnType="XSWI" lnClass="XSWI" inst="1"></LN> -->
 					<LN lnType="CSWI" lnClass="CSWI" inst="1"></LN>
-					<!-- <LN lnType="DRCC" lnClass="DRCC" inst="1"></LN>  -->
+					<!-- <LN lnType="DRCC" lnClass="DRCC" inst="1"></LN> -->
 				</LDevice>
 			</Server>
 		</AccessPoint>
@@ -63,7 +62,7 @@
 		<LNodeType id="LN0" lnClass="LLN0">
 			<DO name="Mod" type="INC" />
 			<DO name="Beh" type="INS" />
-			<!--<DO name="Health" type="INS"/>-->
+			<!--<DO name="Health" type="INS"/> -->
 			<DO name="NamPlt" type="LPL" />
 			<DO name="LEDRs" type="SPC" />
 		</LNodeType>
@@ -72,145 +71,122 @@
 			<DO name="PhyHealth" type="INS" />
 			<DO name="Proxy" type="SPS" />
 		</LNodeType>
-		<LNodeType id="MMXU1" lnClass="MMXU"> 
-			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode-->
-			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
-			<DO name="TotW" type="MV" /><!-- O-->
-			<DO name="TotVAr" type="MV" /><!-- O-->
-			<DO name="PPV" type="DEL" /><!-- O-->
-			<DO name="PNV" type="WYE" /><!-- O-->
+		<LNodeType id="MMXU1" lnClass="MMXU">
+			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
+			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
+			<DO name="TotW" type="MV" /><!-- O -->
+			<DO name="TotVAr" type="MV" /><!-- O -->
+			<DO name="PPV" type="DEL" /><!-- O -->
+			<DO name="PNV" type="WYE" /><!-- O -->
 		</LNodeType>
-		<LNodeType id="XCBR" lnClass="XCBR"> 
-			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode-->
-			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
-			<DO name="LocKey" type="SPS" /><!-- O-->
-			<DO name="Loc" type="SPS" /><!-- M-->
-			<DO name="OpCnt" type="INS" /><!-- M-->
+		<LNodeType id="XCBR" lnClass="XCBR">
+			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
+			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
+			<DO name="LocKey" type="SPS" /><!-- O -->
+			<DO name="Loc" type="SPS" /><!-- M -->
+			<DO name="OpCnt" type="INS" /><!-- M -->
 			<DO name="Pos" type="DPC" /> <!-- M Switch position -->
 			<DO name="BlkOpn" type="SPC" /> <!-- M Block opening -->
-			<DO name="BlkCls" type="SPC" /> <!-- M  Block closing -->
+			<DO name="BlkCls" type="SPC" /> <!-- M Block closing -->
 		</LNodeType>
-		<LNodeType id="XSWI" lnClass="XSWI"> 
-			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode-->
-			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
-			<DO name="LocKey" type="SPS" /><!-- O-->
-			<DO name="Loc" type="SPS" /><!-- M-->
-			<DO name="OpCnt" type="INS" /><!-- M-->
+		<LNodeType id="XSWI" lnClass="XSWI">
+			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
+			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
+			<DO name="LocKey" type="SPS" /><!-- O -->
+			<DO name="Loc" type="SPS" /><!-- M -->
+			<DO name="OpCnt" type="INS" /><!-- M -->
 			<DO name="Pos" type="DPC" /> <!-- M Switch position -->
 			<DO name="BlkOpn" type="SPC" /> <!-- M Block opening -->
-			<DO name="BlkCls" type="SPC" /> <!-- M  Block closing -->
+			<DO name="BlkCls" type="SPC" /> <!-- M Block closing -->
 			<DO name="SwTyp" type="INS" /> <!-- M Switch type -->
 		</LNodeType>
-		<LNodeType id="CSWI" lnClass="CSWI"> 
-			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode-->
-			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
+		<LNodeType id="CSWI" lnClass="CSWI">
+			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
+			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
 			<DO name="Pos" type="DPC" /> <!-- M Switch position -->
 		</LNodeType>
 		<LNodeType id="DRCT" lnClass="DRCT">     <!-- DER controller characteristics -->
-	    	<DO name="Mod"          type="ENC"/>    <!-- M CommonLogicalNode-->
-	    	<DO name="Beh"          type="ENS"/>    <!-- M CommonLogicalNode-->
-	    	<DO name="Health"       type="ENS"/>    <!-- M CommonLogicalNode-->
-	    	<DO name="NamPlt"       type="LPL"/>    <!-- M CommonLogicalNode-->
-	    	<DO name="DERNum"       type="ING"/>    <!-- M-->
-	    	<DO name="DERtyp"       type="ING"/>    <!-- M-->
-	    	<DO name="MaxWLim"      type="ASG"/>    <!-- M-->
-	    	<DO name="MaxVarLim"    type="ASG"/>    <!-- M-->
-	    	<DO name="StrDlTms"     type="ING"/>    <!-- M-->
-	    	<DO name="StopDlTms"    type="ING"/>    <!-- M-->
-	    	<DO name="LodRampRte"   type="ING"/>    <!-- M-->
-	  </LNodeType>
-		<LNodeType id="DRCC" lnClass="DRCC">
-			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode-->
-			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
-			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
-			<DO name="DeRtePct" type="APC" /><!-- O-->
-			<DO name="OutWSet" type="APC" /><!-- O-->
-			<DO name="OutVarSet" type="APC" /><!-- O-->
-			<DO name="ImExSet" type="APC" /><!-- O-->
-			<DO name="OutPFSet" type="APC" /><!-- O-->
-			<DO name="OutHzSet" type="APC" /><!-- O-->
-			<DO name="OutVSet" type="APC" /><!-- O-->
-			<DO name="StrDlTms" type="ING" /><!-- O-->
-			<DO name="StopDlTms" type="ING" /><!-- O-->
-			<DO name="MaxVarLim" type="APC" /><!-- O-->
-			<DO name="LodRamp" type="APC" /><!-- O-->
-			<DO name="LodShutDown" type="APC" /><!-- O-->
-			<DO name="LodSharRamp" type="APC" /><!-- O-->
-			<DO name="LodWPct" type="APC" /><!-- O-->
-			<DO name="DERStr" type="SPC" /><!-- M-->
-			<DO name="DERStop" type="SPC" /><!-- M-->
-			<DO name="GnSync" type="SPC" /><!-- O-->
-			<DO name="EmgStop" type="DPC" /><!-- O-->
-			<DO name="FltAck" type="SPC" /><!-- O-->
-			<DO name="AutoManCtl" type="SPC" /><!-- M-->
-			<DO name="LocRemCtl" type="SPC" /><!-- M-->
-			<DO name="OpModAval" type="SPC" /><!-- O-->
-			<DO name="OpModOff" type="SPC" /><!-- O-->
-			<DO name="OpModTest" type="SPC" /><!-- O-->
-			<DO name="LodModBase" type="SPC" /><!-- O-->
-			<DO name="LodModFol" type="SPC" /><!-- O-->
-			<DO name="LodModFxExp" type="SPC" /><!-- O-->
-			<DO name="LodModAval" type="SPC" /><!-- O-->
-			<DO name="DCPowStat" type="SPC" /><!-- O-->
-			<DO name="OpTmRs" type="SPC" /><!-- O-->
+			<DO name="Mod" type="ENC" />    <!-- M CommonLogicalNode -->
+			<DO name="Beh" type="ENS" />    <!-- M CommonLogicalNode -->
+			<DO name="Health" type="ENS" />    <!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" />    <!-- M CommonLogicalNode -->
+			<DO name="DERNum" type="ING" />    <!-- M -->
+			<DO name="DERtyp" type="ING" />    <!-- M -->
+			<DO name="MaxWLim" type="ASG" />    <!-- M -->
+			<DO name="MaxVarLim" type="ASG" />    <!-- M -->
+			<DO name="StrDlTms" type="ING" />    <!-- M -->
+			<DO name="StopDlTms" type="ING" />    <!-- M -->
+			<DO name="LodRampRte" type="ING" />    <!-- M -->
 		</LNodeType>
-		
+		<LNodeType id="DRCC" lnClass="DRCC">
+			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
+			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
+			<DO name="DeRtePct" type="APC" /><!-- O -->
+			<DO name="OutWSet" type="APC" /><!-- O -->
+			<DO name="OutVarSet" type="APC" /><!-- O -->
+			<DO name="ImExSet" type="APC" /><!-- O -->
+			<DO name="OutPFSet" type="APC" /><!-- O -->
+			<DO name="OutHzSet" type="APC" /><!-- O -->
+			<DO name="OutVSet" type="APC" /><!-- O -->
+			<DO name="StrDlTms" type="ING" /><!-- O -->
+			<DO name="StopDlTms" type="ING" /><!-- O -->
+			<DO name="MaxVarLim" type="APC" /><!-- O -->
+			<DO name="LodRamp" type="APC" /><!-- O -->
+			<DO name="LodShutDown" type="APC" /><!-- O -->
+			<DO name="LodSharRamp" type="APC" /><!-- O -->
+			<DO name="LodWPct" type="APC" /><!-- O -->
+			<DO name="DERStr" type="SPC" /><!-- M -->
+			<DO name="DERStop" type="SPC" /><!-- M -->
+			<DO name="GnSync" type="SPC" /><!-- O -->
+			<DO name="EmgStop" type="DPC" /><!-- O -->
+			<DO name="FltAck" type="SPC" /><!-- O -->
+			<DO name="AutoManCtl" type="SPC" /><!-- M -->
+			<DO name="LocRemCtl" type="SPC" /><!-- M -->
+			<DO name="OpModAval" type="SPC" /><!-- O -->
+			<DO name="OpModOff" type="SPC" /><!-- O -->
+			<DO name="OpModTest" type="SPC" /><!-- O -->
+			<DO name="LodModBase" type="SPC" /><!-- O -->
+			<DO name="LodModFol" type="SPC" /><!-- O -->
+			<DO name="LodModFxExp" type="SPC" /><!-- O -->
+			<DO name="LodModAval" type="SPC" /><!-- O -->
+			<DO name="DCPowStat" type="SPC" /><!-- O -->
+			<DO name="OpTmRs" type="SPC" /><!-- O -->
+		</LNodeType>
+
 		<!-- Controllable analogue process value (APC) -->
 		<DOType id="APC" cdc="APC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
-			<DA name="SBOw" fc="CO" bType="Struct"
-				type="APCSelectWithValue" />
+			<DA name="SBOw" fc="CO" bType="Struct" type="APCSelectWithValue" />
 			<DA name="Oper" fc="CO" bType="Struct" type="APCOperate" />
 			<DA name="Cancel" fc="CO" bType="Struct" type="APCCancel" />
-			<DA name="mxVal" fc="MX" bType="Struct"
-				type="AnalogueValue" /><!-- M -->
+			<DA name="mxVal" fc="MX" bType="Struct" type="AnalogueValue" /><!-- 
+				M -->
 			<DA name="origin" fc="MX" bType="Struct" type="Originator" />
 			<!-- O -->
 			<DA name="q" fc="MX" bType="Quality" qchg="true" /><!-- M -->
 			<DA name="t" fc="MX" bType="Timestamp" /><!-- M -->
-			<DA name="ctlModel" fc="CF" bType="Enum"
-				type="ctlModelEnum" /><!-- M -->
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModelEnum" /><!-- 
+				M -->
 			<DA name="units" fc="CF" bType="Struct" type="Unit" />
 			<!-- O -->
-			<DA name="sVC" fc="CF" bType="Struct"
-				type="ScaledValueConfig" /><!-- AC_SCAV -->
-			<DA name="minVal" fc="CF" bType="Struct"
-				type="AnalogueValue" /><!-- O -->
-			<DA name="maxVal" fc="CF" bType="Struct"
-				type="AnalogueValue" /><!-- O -->
-			<DA name="stepSize" fc="CF" bType="Struct"
-				type="AnalogueValue" /><!-- O -->
-			<DA name="d" fc="DC" bType="VisString255" /><!-- O-->
-			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O-->
-			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M-->
-		</DOType>
-
-		<!-- Analogue setting (ASG) -->
-		<DOType id="ASG" cdc="ASG">
-			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG"  -->
-			<DA name="setMag" fc="SP" bType="Struct"
-				type="AnalogueValue" /><!-- AC_NSG_M -->
-			<DA name="units" fc="CF" bType="Struct" type="Unit" />
-			<!-- O -->
-			<DA name="sVC" fc="CF" bType="Struct"
-				type="ScaledValueConfig" /><!-- AC_SCAV-->
-			<DA name="minVal" fc="CF" bType="Struct"
-				type="AnalogueValue" /><!-- O -->
-			<DA name="maxVal" fc="CF" bType="Struct"
-				type="AnalogueValue" /><!-- O -->
-			<DA name="stepSize" fc="CF" bType="Struct"
-				type="AnalogueValue" /><!-- O -->
+			<DA name="sVC" fc="CF" bType="Struct" type="ScaledValueConfig" /><!-- 
+				AC_SCAV -->
+			<DA name="minVal" fc="CF" bType="Struct" type="AnalogueValue" /><!-- 
+				O -->
+			<DA name="maxVal" fc="CF" bType="Struct" type="AnalogueValue" /><!-- 
+				O -->
+			<DA name="stepSize" fc="CF" bType="Struct" type="AnalogueValue" /><!-- 
+				O -->
 			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
 			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
 			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
@@ -218,7 +194,30 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.4.6 Phase to phase related measured values of a three-phase system (DEL) -->
+		<!-- Analogue setting (ASG) -->
+		<DOType id="ASG" cdc="ASG">
+			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG" -->
+			<DA name="setMag" fc="SP" bType="Struct" type="AnalogueValue" /><!-- 
+				AC_NSG_M -->
+			<DA name="units" fc="CF" bType="Struct" type="Unit" />
+			<!-- O -->
+			<DA name="sVC" fc="CF" bType="Struct" type="ScaledValueConfig" /><!-- 
+				AC_SCAV -->
+			<DA name="minVal" fc="CF" bType="Struct" type="AnalogueValue" /><!-- 
+				O -->
+			<DA name="maxVal" fc="CF" bType="Struct" type="AnalogueValue" /><!-- 
+				O -->
+			<DA name="stepSize" fc="CF" bType="Struct" type="AnalogueValue" /><!-- 
+				O -->
+			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
+			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
+			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
+		</DOType>
+
+		<!-- section 7.4.6 Phase to phase related measured values of a three-phase 
+			system (DEL) -->
 		<DOType id="DEL" cdc="DEL">
 			<SDO name="phsAB" type="CMV" /><!-- GC_1 -->
 			<SDO name="phsBC" type="CMV" /><!-- GC_1 -->
@@ -232,7 +231,8 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.4.5 Phase to ground/neutral related measured values of a three-phase system (WYE)-->
+		<!-- section 7.4.5 Phase to ground/neutral related measured values of a 
+			three-phase system (WYE) -->
 		<DOType id="WYE" cdc="WYE">
 			<SDO name="phsA" type="CMV" /><!-- GC_1 -->
 			<SDO name="phsB" type="CMV" /><!-- GC_1 -->
@@ -249,12 +249,11 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.5.3 Controllable double point (DPC)-->
+		<!-- section 7.5.3 Controllable double point (DPC) -->
 		<!-- Definitions from 61850-8-1 override definitions from 61850-7-3 -->
 		<DOType id="DPC" cdc="DPC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
-			<DA name="SBOw" fc="CO" bType="Struct"
-				type="DPCSelectWithValue" />
+			<DA name="SBOw" fc="CO" bType="Struct" type="DPCSelectWithValue" />
 			<DA name="Oper" fc="CO" bType="Struct" type="DPCOperate" />
 			<DA name="Cancel" fc="CO" bType="Struct" type="DPCCancel" />
 			<DA name="origin" fc="ST" bType="Struct" type="Originator" />
@@ -270,26 +269,25 @@
 			<DA name="subVal" fc="SV" bType="Dbpos" /><!-- PICS_SUBST -->
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_SUBST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_SUBST -->
-			<DA name="pulseConfig" fc="CF" bType="Struct"
-				type="PulseConfig" /><!-- AC_CO_O -->
-			<DA name="ctlModel" fc="CF" bType="Enum"
-				type="ctlModelEnum" /><!-- M -->
+			<DA name="pulseConfig" fc="CF" bType="Struct" type="PulseConfig" /><!-- 
+				AC_CO_O -->
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModelEnum" /><!-- 
+				M -->
 			<DA name="sboTimeout" fc="CF" bType="INT32U" /><!-- AC_CO_O -->
-			<DA name="sboClass" fc="CF" bType="Enum"
-				type="sboClassEnum" /><!-- AC_CO_O -->
-			<DA name="d" fc="DC" bType="VisString255" /><!-- O-->
-			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O-->
-			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M-->
+			<DA name="sboClass" fc="CF" bType="Enum" type="sboClassEnum" /><!-- 
+				AC_CO_O -->
+			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
+			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
+			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.5.4 Controllable integer status (INC)-->
+		<!-- section 7.5.4 Controllable integer status (INC) -->
 		<!-- Definitions from 61850-8-1 override definitions from 61850-7-3 -->
 		<DOType id="INC" cdc="INC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
-			<DA name="SBOw" fc="CO" bType="Struct"
-				type="INCSelectWithValue" />
+			<DA name="SBOw" fc="CO" bType="Struct" type="INCSelectWithValue" />
 			<DA name="Oper" fc="CO" bType="Struct" type="INCOperate" />
 			<DA name="Cancel" fc="CO" bType="Struct" type="INCCancel" />
 			<DA name="origin" fc="ST" bType="Struct" type="Originator" />
@@ -305,24 +303,24 @@
 			<DA name="subVal" fc="SV" bType="INT32" /><!-- PICS_SUBST -->
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_SUBST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_SUBST -->
-			<DA name="ctlModel" fc="CF" bType="Enum"
-				type="ctlModelEnum" /><!-- M -->
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModelEnum" /><!-- 
+				M -->
 			<DA name="sboTimeout" fc="CF" bType="INT32U" /><!-- AC_CO_O -->
-			<DA name="sboClass" fc="CF" bType="Enum"
-				type="sboClassEnum" /><!-- M -->
+			<DA name="sboClass" fc="CF" bType="Enum" type="sboClassEnum" /><!-- 
+				M -->
 			<DA name="minVal" fc="CF" bType="INT32" /><!-- O -->
 			<DA name="maxVal" fc="CF" bType="INT32" /><!-- O -->
 			<DA name="stepSize" fc="CF" bType="INT32U" /><!-- O -->
-			<DA name="d" fc="DC" bType="VisString255" /><!-- O-->
-			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O-->
-			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M-->
+			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
+			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
+			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.7.3 Integer status setting (ING)-->
+		<!-- section 7.7.3 Integer status setting (ING) -->
 		<DOType id="ING" cdc="ING">
-			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG"  -->
+			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG" -->
 			<DA name="setVal" fc="SP" bType="INT32" /><!-- AC_NSG_M -->
 			<DA name="minVal" fc="CF" bType="INT32" /><!-- O -->
 			<DA name="maxVal" fc="CF" bType="INT32" /><!-- O -->
@@ -334,7 +332,7 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.9.2 Device name plate (DPL)-->
+		<!-- section 7.9.2 Device name plate (DPL) -->
 		<DOType id="DPL" cdc="DPL">
 			<DA name="vendor" fc="DC" bType="VisString255" /><!-- M -->
 			<DA name="hwRev" fc="DC" bType="VisString255" /><!-- O -->
@@ -347,7 +345,7 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.9.3 Logical Node name plate (LPL)-->
+		<!-- section 7.9.3 Logical Node name plate (LPL) -->
 		<DOType id="LPL" cdc="LPL">
 			<DA name="vendor" fc="DC" bType="VisString255" /><!-- M -->
 			<DA name="swRev" fc="DC" bType="VisString255" /><!-- M -->
@@ -363,7 +361,7 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.3.4 Integer status (INS)-->
+		<!-- section 7.3.4 Integer status (INS) -->
 		<DOType id="INS" cdc="INS">
 			<DA name="stVal" fc="ST" bType="INT32" dchg="true" />
 			<!-- M -->
@@ -380,27 +378,25 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.4.2 Measured value (MV)-->
+		<!-- section 7.4.2 Measured value (MV) -->
 		<DOType id="MV" cdc="MV">
-			<DA name="instMag" fc="MX" bType="Struct"
-				type="AnalogueValue" />
-			<DA name="mag" fc="MX" bType="Struct" type="AnalogueValue"
-				dchg="true" /><!-- M -->
-			<DA name="range" fc="MX" bType="Enum" type="rangeEnum"
-				dchg="true" />
+			<DA name="instMag" fc="MX" bType="Struct" type="AnalogueValue" />
+			<DA name="mag" fc="MX" bType="Struct" type="AnalogueValue" dchg="true" /><!-- 
+				M -->
+			<DA name="range" fc="MX" bType="Enum" type="rangeEnum" dchg="true" />
 			<DA name="q" fc="MX" bType="Quality" qchg="true" /><!-- M -->
 			<DA name="t" fc="MX" bType="Timestamp" /><!-- M -->
 			<DA name="subEna" fc="SV" bType="BOOLEAN" /><!-- PICS_ST -->
-			<DA name="subMag" fc="SV" bType="Struct"
-				type="AnalogueValue" /><!-- PICS_ST -->
+			<DA name="subMag" fc="SV" bType="Struct" type="AnalogueValue" /><!-- 
+				PICS_ST -->
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_ST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_ST -->
 			<DA name="units" fc="CF" bType="Struct" type="Unit" />
 			<!-- O -->
 			<DA name="db" fc="CF" bType="INT32U" /><!-- O -->
 			<DA name="zeroDb" fc="CF" bType="INT32U" /><!-- O -->
-			<DA name="sVC" fc="CF" bType="Struct"
-				type="ScaledValueConfig" /><!-- AC_SCAV -->
+			<DA name="sVC" fc="CF" bType="Struct" type="ScaledValueConfig" /><!-- 
+				AC_SCAV -->
 			<DA name="rangeC" fc="CF" bType="Struct" type="RangeConfig" />
 			<!-- GC_CON -->
 			<DA name="smpRate" fc="CF" bType="INT32U" />
@@ -411,12 +407,11 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.5.2 Controllable single point (SPC)-->
+		<!-- section 7.5.2 Controllable single point (SPC) -->
 		<!-- Definitions from 61850-8-1 override definitions from 61850-7-3 -->
 		<DOType id="SPC" cdc="SPC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
-			<DA name="SBOw" fc="CO" bType="Struct"
-				type="SPCSelectWithValue" />
+			<DA name="SBOw" fc="CO" bType="Struct" type="SPCSelectWithValue" />
 			<DA name="Oper" fc="CO" bType="Struct" type="SPCOperate" />
 			<DA name="Cancel" fc="CO" bType="Struct" type="SPCCancel" />
 			<DA name="origin" fc="ST" bType="Struct" type="Originator" />
@@ -432,13 +427,13 @@
 			<DA name="subVal" fc="SV" bType="BOOLEAN" /><!-- PICS_SUBST -->
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_SUBST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_SUBST -->
-			<DA name="pulseConfig" fc="CF" bType="Struct"
-				type="PulseConfig" /><!-- AC_CO_O -->
-			<DA name="ctlModel" fc="CF" bType="Enum"
-				type="ctlModelEnum" /><!-- M -->
+			<DA name="pulseConfig" fc="CF" bType="Struct" type="PulseConfig" /><!-- 
+				AC_CO_O -->
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModelEnum" /><!-- 
+				M -->
 			<DA name="sboTimeout" fc="CF" bType="INT32U" /><!-- AC_CO_O -->
-			<DA name="sboClass" fc="CF" bType="Enum"
-				type="sboClassEnum" /><!-- AC_CO_O -->
+			<DA name="sboClass" fc="CF" bType="Enum" type="sboClassEnum" /><!-- 
+				AC_CO_O -->
 			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
 			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
 			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
@@ -446,7 +441,7 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.3.2 Single point status (SPS)-->
+		<!-- section 7.3.2 Single point status (SPS) -->
 		<DOType id="SPS" cdc="SPS">
 			<DA name="stVal" fc="ST" bType="BOOLEAN" dchg="true" />
 			<!-- M -->
@@ -456,7 +451,7 @@
 			<DA name="subVal" fc="SV" bType="BOOLEAN" /><!-- PICS_SUBST -->
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_SUBST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_SUBST -->
-			<DA name="d" fc="DC" bType="VisString255" /><!-- O-->
+			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
 			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
 			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
 			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
@@ -465,17 +460,17 @@
 
 		<!-- NEW IN EDITION 2. Defined in 61850-7-3 -->
 		<DOType id="CSG" cdc="CSG">
-			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG"  -->
+			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG" -->
 			<DA name="pointZ" fc="SP" bType="FLOAT32" /><!-- AC_NSG_O -->
 			<DA name="numPts" fc="SP" bType="INT16U" /><!-- AC_NSG_O -->
-			<DA name="crvPts" fc="SP" bType="Struct" type="Point"
-				count="16" /><!-- M-->
+			<DA name="crvPts" fc="SP" bType="Struct" type="Point" count="16" /><!-- 
+				M -->
 			<DA name="xUnits" fc="CF" bType="Struct" type="Unit" />
-			<!-- M-->
+			<!-- M -->
 			<DA name="yUnits" fc="CF" bType="Struct" type="Unit" />
-			<!-- M-->
+			<!-- M -->
 			<DA name="zUnits" fc="CF" bType="Struct" type="Unit" />
-			<!-- O-->
+			<!-- O -->
 			<DA name="maxPts" fc="CF" bType="INT16U" /><!-- M -->
 			<DA name="xD" fc="DC" bType="VisString255" /><!-- M -->
 			<DA name="xDU" fc="DC" bType="Unicode255" /><!-- O -->
@@ -493,16 +488,15 @@
 		<!-- NEW IN EDITION 2. Defined in 61850-7-3 -->
 		<DOType id="ENC" cdc="ENC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
-			<DA name="SBOw" fc="CO" bType="Struct"
-				type="INCSelectWithValue" />
+			<DA name="SBOw" fc="CO" bType="Struct" type="INCSelectWithValue" />
 			<DA name="Oper" fc="CO" bType="Struct" type="INCOperate" />
 			<DA name="Cancel" fc="CO" bType="Struct" type="INCCancel" />
 			<DA name="origin" fc="ST" bType="Struct" type="Originator" />
 			<!-- AC_CO_O -->
 			<DA name="ctlNum" fc="ST" bType="INT8U" /><!-- AC_CO_O -->
 			<!-- DEBUG: may need different "stVal" type for different controls -->
-			<DA name="stVal" fc="ST" bType="Enum" type="encEnum"
-				dchg="true" /><!-- M -->
+			<DA name="stVal" fc="ST" bType="Enum" type="encEnum" dchg="true" /><!-- 
+				M -->
 			<DA name="q" fc="ST" bType="Quality" qchg="true" /><!-- M -->
 			<DA name="t" fc="ST" bType="Timestamp" /><!-- M -->
 			<DA name="stSeld" fc="ST" bType="BOOLEAN" dchg="true" />
@@ -519,22 +513,22 @@
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_SUBST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_SUBST -->
 			<DA name="blkEna" fc="BL" bType="BOOLEAN" /><!-- O -->
-			<DA name="ctlModel" fc="CF" bType="Enum"
-				type="ctlModelEnum" /><!-- M -->
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModelEnum" /><!-- 
+				M -->
 			<DA name="sboTimeout" fc="CF" bType="INT32U" /><!-- AC_CO_O -->
-			<DA name="sboClass" fc="CF" bType="Enum"
-				type="sboClassEnum" /><!-- AC_CO_O -->
+			<DA name="sboClass" fc="CF" bType="Enum" type="sboClassEnum" /><!-- 
+				AC_CO_O -->
 			<DA name="operTimeout" fc="CF" bType="INT32U" /><!-- AC_CO_O -->
-			<DA name="d" fc="DC" bType="VisString255" /><!-- O-->
-			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O-->
-			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M-->
-			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M-->
+			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
+			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
+			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
+			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
 		<!-- NEW IN EDITION 2. Defined in 61850-7-3 -->
 		<DOType id="ENG" cdc="ENG">
-			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG"  -->
+			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG" -->
 			<DA name="setVal" fc="SP" bType="Enum" type="engSetValEnum" />
 			<!-- AC_NSG_M -->
 			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
@@ -545,16 +539,17 @@
 		</DOType>
 
 		<!-- NEW IN EDITION 2. Defined in 61850-7-3 -->
-		<!-- Enumerated status (ENS)-->
+		<!-- Enumerated status (ENS) -->
 		<DOType id="ENS" cdc="ENS">
-			<!-- DEBUG: fix "type" for "stVal". May need several ENS types. Used for many things in part 7-4 -->
-			<DA name="stVal" fc="ST" bType="Enum" type="dirGeneralEnum"
-				dchg="true" /><!-- M -->
+			<!-- DEBUG: fix "type" for "stVal". May need several ENS types. Used for 
+				many things in part 7-4 -->
+			<DA name="stVal" fc="ST" bType="Enum" type="dirGeneralEnum" dchg="true" /><!-- 
+				M -->
 			<DA name="q" fc="ST" bType="Quality" qchg="true" /><!-- M -->
 			<DA name="t" fc="ST" bType="Timestamp" /><!-- M -->
 			<DA name="subEna" fc="SV" bType="BOOLEAN" /><!-- PICS_SUBST -->
-			<DA name="subVal" fc="SV" bType="Enum"
-				type="dirGeneralEnum" /><!-- PICS_SUBST -->
+			<DA name="subVal" fc="SV" bType="Enum" type="dirGeneralEnum" /><!-- 
+				PICS_SUBST -->
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_SUBST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_SUBST -->
 			<DA name="blkEna" fc="BL" bType="BOOLEAN" /><!-- O -->
@@ -565,15 +560,15 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- ECP Enumerated status (ECPENS)-->
+		<!-- ECP Enumerated status (ECPENS) -->
 		<DOType id="ECPENS" cdc="ENS">
-			<DA name="stVal" fc="ST" bType="Enum" type="ecpTypeEnum"
-				dchg="true" /><!-- M -->
+			<DA name="stVal" fc="ST" bType="Enum" type="ecpTypeEnum" dchg="true" /><!-- 
+				M -->
 			<DA name="q" fc="ST" bType="Quality" qchg="true" /><!-- M -->
 			<DA name="t" fc="ST" bType="Timestamp" /><!-- M -->
 			<DA name="subEna" fc="SV" bType="BOOLEAN" /><!-- PICS_SUBST -->
-			<DA name="subVal" fc="SV" bType="Enum"
-				type="dirGeneralEnum" /><!-- PICS_SUBST -->
+			<DA name="subVal" fc="SV" bType="Enum" type="dirGeneralEnum" /><!-- 
+				PICS_SUBST -->
 			<DA name="subQ" fc="SV" bType="Quality" /><!-- PICS_SUBST -->
 			<DA name="subID" fc="SV" bType="VisString64" /><!-- PICS_SUBST -->
 			<DA name="blkEna" fc="BL" bType="BOOLEAN" /><!-- O -->
@@ -598,8 +593,8 @@
 			<!-- O -->
 			<DA name="tstEna" fc="SP" bType="BOOLEAN" dchg="true" />
 			<!-- GC_2_1 -->
-			<DA name="purpose" fc="DC" bType="VisString255" /><!-- O-->
-			<DA name="d" fc="DC" bType="VisString255" /><!-- O-->
+			<DA name="purpose" fc="DC" bType="VisString255" /><!-- O -->
+			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
 			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
 			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
 			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
@@ -608,7 +603,7 @@
 
 		<!-- NEW IN EDITION 2. Defined in 61850-7-3 -->
 		<DOType id="VSG" cdc="VSG">
-			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG"  -->
+			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG" -->
 			<DA name="setVal" fc="SP" bType="VisString255" /><!-- AC_NSG_M -->
 			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
 			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
@@ -617,17 +612,17 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- Complex measured value (CMV)-->
+		<!-- Complex measured value (CMV) -->
 		<DOType id="CMV" cdc="CMV">
 			<DA name="instCVal" fc="MX" bType="Struct" type="Vector" />
-			<!-- O-->
+			<!-- O -->
 
-			<DA name="cVal" fc="MX" bType="Struct" type="Vector"
-				dchg="true" /><!-- M -->
-			<DA name="range" fc="MX" bType="Enum" type="rangeEnum"
-				dchg="true" /><!-- O -->
-			<DA name="rangeAng" fc="MX" bType="Enum" type="rangeEnum"
-				dchg="true" /><!-- O -->
+			<DA name="cVal" fc="MX" bType="Struct" type="Vector" dchg="true" /><!-- 
+				M -->
+			<DA name="range" fc="MX" bType="Enum" type="rangeEnum" dchg="true" /><!-- 
+				O -->
+			<DA name="rangeAng" fc="MX" bType="Enum" type="rangeEnum" dchg="true" /><!-- 
+				O -->
 			<DA name="q" fc="MX" bType="Quality" qchg="true" /><!-- M -->
 			<DA name="t" fc="MX" bType="Timestamp" /><!-- M -->
 
@@ -645,18 +640,18 @@
 			<DA name="zeroDb" fc="CF" bType="INT32U" /><!-- O -->
 			<DA name="rangeC" fc="CF" bType="Struct" type="RangeConfig" />
 			<!-- GC_CON -->
-			<DA name="rangeAngC" fc="CF" bType="Struct"
-				type="RangeConfig" /><!-- GC_CON -->
-			<DA name="magSVC" fc="CF" bType="Struct"
-				type="ScaledValueConfig" /><!-- AC_SCAV -->
-			<DA name="angSVC" fc="CF" bType="Struct"
-				type="ScaledValueConfig" /><!-- AC_SCAV -->
+			<DA name="rangeAngC" fc="CF" bType="Struct" type="RangeConfig" /><!-- 
+				GC_CON -->
+			<DA name="magSVC" fc="CF" bType="Struct" type="ScaledValueConfig" /><!-- 
+				AC_SCAV -->
+			<DA name="angSVC" fc="CF" bType="Struct" type="ScaledValueConfig" /><!-- 
+				AC_SCAV -->
 			<DA name="angRef" fc="CF" bType="Enum" type="angRefEnum" />
 			<!-- O -->
 			<DA name="smpRate" fc="CF" bType="INT32U" /><!-- O -->
 
-			<DA name="d" fc="DC" bType="VisString255" /><!-- O-->
-			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O-->
+			<DA name="d" fc="DC" bType="VisString255" /><!-- O -->
+			<DA name="dU" fc="DC" bType="Unicode255" /><!-- O -->
 			<DA name="cdcNs" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
 			<DA name="cdcName" fc="EX" bType="VisString255" /><!-- AC_DLNDA_M -->
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
@@ -668,9 +663,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="ISCOperate">
@@ -679,9 +674,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="ISCCancel">
@@ -690,13 +685,13 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
 		</DAType>
 
-		<DAType id="Originator"><!-- sec 6.8 Originator-->
-			<BDA name="orCat" bType="Enum" type="orCatEnum" /><!-- M-->
-			<BDA name="orIdent" bType="Octet64" /><!-- M-->
+		<DAType id="Originator"><!-- sec 6.8 Originator -->
+			<BDA name="orCat" bType="Enum" type="orCatEnum" /><!-- M -->
+			<BDA name="orIdent" bType="Octet64" /><!-- M -->
 		</DAType>
 
 		<DAType id="SPCSelectWithValue">
@@ -705,9 +700,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="SPCOperate">
@@ -716,9 +711,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="SPCCancel">
@@ -727,8 +722,8 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
 		</DAType>
 
 		<DAType id="INCSelectWithValue">
@@ -737,9 +732,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="INCOperate">
@@ -748,9 +743,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="INCCancel">
@@ -759,34 +754,34 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
 		</DAType>
 
-		<DAType id="PulseConfig"><!-- sec 6.7 Pulse configuration-->
-			<BDA name="cmdQual" bType="Enum" type="cmdQualEnum" /><!-- M-->
-			<BDA name="onDur" bType="INT32U" /><!-- M-->
-			<BDA name="offDur" bType="INT32U" /><!-- M-->
-			<BDA name="numPls" bType="INT32U" /><!-- M-->
+		<DAType id="PulseConfig"><!-- sec 6.7 Pulse configuration -->
+			<BDA name="cmdQual" bType="Enum" type="cmdQualEnum" /><!-- M -->
+			<BDA name="onDur" bType="INT32U" /><!-- M -->
+			<BDA name="offDur" bType="INT32U" /><!-- M -->
+			<BDA name="numPls" bType="INT32U" /><!-- M -->
 		</DAType>
 
-		<DAType id="Unit"><!-- sec 6.9 Unit-->
+		<DAType id="Unit"><!-- sec 6.9 Unit -->
 			<BDA name="SIUnit" bType="Enum" type="SIUnitEnum" />
-			<!-- M-->
+			<!-- M -->
 			<BDA name="multiplier" bType="Enum" type="multiplierEnum" />
-			<!-- O-->
+			<!-- O -->
 		</DAType>
 
-		<DAType id="ScaledValueConfig"><!-- sec 6.4 Configuration of analogue value-->
-			<BDA name="scaleFactor" bType="FLOAT32" /><!-- M-->
-			<BDA name="offset" bType="FLOAT32" /><!-- M-->
+		<DAType id="ScaledValueConfig"><!-- sec 6.4 Configuration of analogue value -->
+			<BDA name="scaleFactor" bType="FLOAT32" /><!-- M -->
+			<BDA name="offset" bType="FLOAT32" /><!-- M -->
 		</DAType>
 
 		<DAType id="AnalogueValue"><!-- sec 6.3 -->
-			<BDA name="i" bType="INT32"><!-- GC_1-->
+			<BDA name="i" bType="INT32"><!-- GC_1 -->
 				<!--<Val>987</Val> -->
 			</BDA>
-			<BDA name="f" bType="FLOAT32" /><!-- GC_1-->
+			<BDA name="f" bType="FLOAT32" /><!-- GC_1 -->
 		</DAType>
 
 		<DAType id="APCSelectWithValue">
@@ -796,9 +791,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="APCOperate">
@@ -808,9 +803,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="APCCancel">
@@ -820,8 +815,8 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
 		</DAType>
 
 		<DAType id="DPCSelectWithValue">
@@ -830,9 +825,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="DPCOperate">
@@ -841,9 +836,9 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
-			<BDA name="Check" bType="Check" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
+			<BDA name="Check" bType="Check" /><!-- -->
 		</DAType>
 
 		<DAType id="DPCCancel">
@@ -852,35 +847,35 @@
 			<BDA name="origin" bType="Struct" type="Originator" />
 			<!-- M -->
 			<BDA name="ctlNum" bType="INT8U" /><!-- M -->
-			<BDA name="T" bType="Timestamp" /><!--  -->
-			<BDA name="Test" bType="BOOLEAN" /><!--  -->
+			<BDA name="T" bType="Timestamp" /><!-- -->
+			<BDA name="Test" bType="BOOLEAN" /><!-- -->
 		</DAType>
 
-		<DAType id="Point"><!-- sec 6.10  Point -->
-			<BDA name="xVal" bType="FLOAT32" /><!-- M-->
-			<BDA name="yVal" bType="FLOAT32" /><!-- M-->
+		<DAType id="Point"><!-- sec 6.10 Point -->
+			<BDA name="xVal" bType="FLOAT32" /><!-- M -->
+			<BDA name="yVal" bType="FLOAT32" /><!-- M -->
 		</DAType>
 
-		<DAType id="Vector"><!-- sec 6.10  Vector Definition -->
+		<DAType id="Vector"><!-- sec 6.10 Vector Definition -->
 			<BDA name="mag" bType="Struct" type="AnalogueValue" />
-			<!-- M-->
+			<!-- M -->
 			<BDA name="ang" bType="Struct" type="AnalogueValue" />
-			<!-- O-->
+			<!-- O -->
 		</DAType>
 
-		<DAType id="RangeConfig"><!-- sec 6.5 Range configuration-->
+		<DAType id="RangeConfig"><!-- sec 6.5 Range configuration -->
 			<BDA name="hhLim" bType="Struct" type="AnalogueValue" />
-			<!-- M-->
+			<!-- M -->
 			<BDA name="hLim" bType="Struct" type="AnalogueValue" />
-			<!-- M-->
+			<!-- M -->
 			<BDA name="lLim" bType="Struct" type="AnalogueValue" />
-			<!-- M-->
+			<!-- M -->
 			<BDA name="llLim" bType="Struct" type="AnalogueValue" />
-			<!-- M-->
+			<!-- M -->
 			<BDA name="min" bType="Struct" type="AnalogueValue" />
-			<!-- M-->
+			<!-- M -->
 			<BDA name="max" bType="Struct" type="AnalogueValue" />
-			<!-- M-->
+			<!-- M -->
 		</DAType>
 
 		<EnumType id="angRefEnum">
@@ -1045,13 +1040,16 @@
 			<EnumVal ord="3">high-high</EnumVal>
 			<EnumVal ord="4">low-low</EnumVal>
 		</EnumType>
-		
+
 		<EnumType id="ecpTypeEnum">
 			<EnumVal ord="0">Not applicable / Unknown</EnumVal>
 			<EnumVal ord="1">Connection of one DER to local load</EnumVal>
-			<EnumVal ord="2">Connection of group of DERs to local EPS serving local load</EnumVal>
-			<EnumVal ord="3">Connection of local EPS with local load to area EPS (PCC)</EnumVal>
-			<EnumVal ord="4">Connection of local EPS without local load to area EPS (PCC)</EnumVal>
+			<EnumVal ord="2">Connection of group of DERs to local EPS serving
+				local load</EnumVal>
+			<EnumVal ord="3">Connection of local EPS with local load to area
+				EPS (PCC)</EnumVal>
+			<EnumVal ord="4">Connection of local EPS without local load to
+				area EPS (PCC)</EnumVal>
 			<EnumVal ord="99">Other</EnumVal>
 		</EnumType>
 
