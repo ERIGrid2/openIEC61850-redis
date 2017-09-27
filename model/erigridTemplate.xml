@@ -87,7 +87,7 @@
 			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
 			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
 			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
-			<DO name="LocKey" type="SPS" /><!-- M-->
+			<DO name="LocKey" type="SPS" /><!-- O-->
 			<DO name="Loc" type="SPS" /><!-- M-->
 			<DO name="OpCnt" type="INS" /><!-- M-->
 			<DO name="Pos" type="DPC" /> <!-- M Switch position -->
@@ -99,7 +99,7 @@
 			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
 			<DO name="Health" type="INS" /><!-- M CommonLogicalNode-->
 			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
-			<DO name="LocKey" type="SPS" /><!-- M-->
+			<DO name="LocKey" type="SPS" /><!-- O-->
 			<DO name="Loc" type="SPS" /><!-- M-->
 			<DO name="OpCnt" type="INS" /><!-- M-->
 			<DO name="Pos" type="DPC" /> <!-- M Switch position -->
@@ -114,6 +114,19 @@
 			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode-->
 			<DO name="Pos" type="DPC" /> <!-- M Switch position -->
 		</LNodeType>
+		<LNodeType id="DRCT" lnClass="DRCT">     <!-- DER controller characteristics -->
+	    	<DO name="Mod"          type="ENC"/>    <!-- M CommonLogicalNode-->
+	    	<DO name="Beh"          type="ENS"/>    <!-- M CommonLogicalNode-->
+	    	<DO name="Health"       type="ENS"/>    <!-- M CommonLogicalNode-->
+	    	<DO name="NamPlt"       type="LPL"/>    <!-- M CommonLogicalNode-->
+	    	<DO name="DERNum"       type="ING"/>    <!-- M-->
+	    	<DO name="DERtyp"       type="ING"/>    <!-- M-->
+	    	<DO name="MaxWLim"      type="ASG"/>    <!-- M-->
+	    	<DO name="MaxVarLim"    type="ASG"/>    <!-- M-->
+	    	<DO name="StrDlTms"     type="ING"/>    <!-- M-->
+	    	<DO name="StopDlTms"    type="ING"/>    <!-- M-->
+	    	<DO name="LodRampRte"   type="ING"/>    <!-- M-->
+	  </LNodeType>
 		<LNodeType id="DRCC" lnClass="DRCC">
 			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode-->
 			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode-->
@@ -150,6 +163,8 @@
 			<DO name="DCPowStat" type="SPC" /><!-- O-->
 			<DO name="OpTmRs" type="SPC" /><!-- O-->
 		</LNodeType>
+		
+		<!-- Controllable analogue process value (APC) -->
 		<DOType id="APC" cdc="APC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
 			<DA name="SBOw" fc="CO" bType="Struct"
@@ -181,6 +196,7 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M-->
 		</DOType>
 
+		<!-- Analogue setting (ASG) -->
 		<DOType id="ASG" cdc="ASG">
 			<!-- NOTE: If "setting group" supported, change all fc="SP" to fc="SG"  -->
 			<DA name="setMag" fc="SP" bType="Struct"
@@ -202,7 +218,7 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.4.6 Phase to ground related measured values of a three phase systemDelta (DEL) -->
+		<!-- section 7.4.6 Phase to phase related measured values of a three-phase system (DEL) -->
 		<DOType id="DEL" cdc="DEL">
 			<SDO name="phsAB" type="CMV" /><!-- GC_1 -->
 			<SDO name="phsBC" type="CMV" /><!-- GC_1 -->
@@ -216,7 +232,7 @@
 			<DA name="dataNs" fc="EX" bType="VisString255" /><!-- AC_DLN_M -->
 		</DOType>
 
-		<!-- section 7.4.5 Phase to ground related measurement values of a three phase system (WYE)-->
+		<!-- section 7.4.5 Phase to ground/neutral related measured values of a three-phase system (WYE)-->
 		<DOType id="WYE" cdc="WYE">
 			<SDO name="phsA" type="CMV" /><!-- GC_1 -->
 			<SDO name="phsB" type="CMV" /><!-- GC_1 -->

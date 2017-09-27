@@ -63,9 +63,9 @@ public class RedisSubscriber extends JedisPubSub {
 			}
 			BasicDataAttribute bda = redisToMms.get(varRedis);
 			try {
-				System.out.println("Setting: " + bda + " with value: " + value);
 				setBdaValue(bda, value);
 			} catch (Exception e) {
+				System.out.println("Setting: " + bda + " with value: " + value);
 				System.out.println("The application does not support writing this type of basic data attribute.");
 				continue;
 			}
@@ -84,9 +84,9 @@ public class RedisSubscriber extends JedisPubSub {
 				return;
 			}
 			try {
-				System.out.println("Setting: " + bda + " with value: " + value);
 				setBdaValue(bda, value);
 			} catch (Exception e) {
+				System.out.println("Setting: " + bda + " with value: " + value);
 				System.out.println("The application does not support writing this type of basic data attribute.");
 				return;
 			}
@@ -95,15 +95,15 @@ public class RedisSubscriber extends JedisPubSub {
 			String varRedis = channel.split(":")[1];
 			Map<String, String> values = jedis.hgetAll(varRedis);
 			for (String hashField: values.keySet()) {
+				String value = values.get(hashField);
 				BasicDataAttribute bda = redisToMms.get(varRedis + "/" + hashField);
 				if (bda == null) {
 					continue;
 				}
 				try {
-					String value = values.get(hashField);
-					System.out.println("Setting: " + bda + " with value: " + value);
 					setBdaValue(bda, value);
 				} catch (Exception e) {
+					System.out.println("Setting: " + bda + " with value: " + value);
 					System.out.println("The application does not support writing this type of basic data attribute.");
 					continue;
 				}
