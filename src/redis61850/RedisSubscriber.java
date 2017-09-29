@@ -92,7 +92,7 @@ public class RedisSubscriber extends JedisPubSub {
 			}
 		}
 		if (message.equals("hset")) {
-			String varRedis = channel.split(":")[1];
+			String varRedis = channel.split(":", 2)[1];
 			Map<String, String> values = jedis.hgetAll(varRedis);
 			for (String hashField: values.keySet()) {
 				String value = values.get(hashField);

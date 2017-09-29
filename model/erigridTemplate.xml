@@ -46,7 +46,7 @@
 					<!-- ################################################################################ -->
 					<!-- ################ INSERT LOGICAL NODES HERE (SEE EXAMPLES BELOW) ################ -->
 					<!-- ################################################################################ -->
-					<!-- <LN lnType="MMXU1" lnClass="MMXU" inst="1"></LN> -->
+					<!-- <LN lnType="MMXU" lnClass="MMXU" inst="1"></LN> -->
 					<!-- <LN lnType="XCBR" lnClass="XCBR" inst="1"></LN> -->
 					<!-- <LN lnType="XSWI" lnClass="XSWI" inst="1"></LN> -->
 					<LN lnType="CSWI" lnClass="CSWI" inst="1"></LN>
@@ -71,7 +71,7 @@
 			<DO name="PhyHealth" type="INS" />
 			<DO name="Proxy" type="SPS" />
 		</LNodeType>
-		<LNodeType id="MMXU1" lnClass="MMXU">
+		<LNodeType id="MMXU" lnClass="MMXU">
 			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
 			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
 			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
@@ -80,6 +80,22 @@
 			<DO name="TotVAr" type="MV" /><!-- O -->
 			<DO name="PPV" type="DEL" /><!-- O -->
 			<DO name="PNV" type="WYE" /><!-- O -->
+			<DO name="W" type="WYE" /><!-- O -->
+			<DO name="VAr" type="WYE" /><!-- O -->
+			<DO name="AvPPVPhs" type="MV" /><!-- O -->
+			<DO name="AvAPhs" type="MV" /><!-- O -->
+			<DO name="Hz" type="MV" /><!-- O -->
+			<DO name="TotPF" type="MV" /><!-- O -->
+		</LNodeType>
+		<LNodeType id="MMDC" lnClass="MMDC">
+			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
+			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
+			<DO name="Watt" type="MV" /><!-- O -->
+			<DO name="Amp" type="MV" /><!-- O -->
+			<DO name="Vol" type="MV" /><!-- O -->
+			<DO name="Ris" type="MV" /><!-- O -->
 		</LNodeType>
 		<LNodeType id="XCBR" lnClass="XCBR">
 			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
