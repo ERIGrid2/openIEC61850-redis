@@ -24,6 +24,7 @@ package redis61850;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
@@ -38,6 +39,9 @@ import org.openmuc.openiec61850.BdaInt32U;
 import org.openmuc.openiec61850.BdaInt64;
 import org.openmuc.openiec61850.BdaInt8;
 import org.openmuc.openiec61850.BdaInt8U;
+import org.openmuc.openiec61850.BdaQuality;
+import org.openmuc.openiec61850.BdaQuality.Validity;
+import org.openmuc.openiec61850.BdaTimestamp;
 import org.openmuc.openiec61850.Fc;
 import org.openmuc.openiec61850.ServerEventListener;
 import org.openmuc.openiec61850.ServerModel;
@@ -175,7 +179,7 @@ public class RedisListener implements Runnable, ServerEventListener {
 		}
 	}
 
-	// TODO: handle more types (timestamps, booleans...)
+	// TODO: handle more types (booleans...)
 	private String getBdaValue(BasicDataAttribute bda) {
 		String valueString;
 		if (bda instanceof BdaFloat32) {
@@ -214,6 +218,17 @@ public class RedisListener implements Runnable, ServerEventListener {
 		        if ((value[0] & 0x40) == 0x40) {
 		        	valueString = "0"; // OFF
 		        }
+		}
+		else if (bda instanceof BdaTimestamp) {
+			Date d = ((BdaTimestamp) bda).getDate();
+			valueString = d.getTime() + "";
+		}
+		else if (bda instanceof BdaQuality) {
+			valueString = "0";
+			Validity v = ((BdaQuality) bda).getValidity();
+			if (v == Validity.GOOD) {
+				valueString = "1";
+			}
 		}
 		else {
 			throw new IllegalArgumentException();

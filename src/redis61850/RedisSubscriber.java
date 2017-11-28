@@ -22,6 +22,7 @@
 package redis61850;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +38,10 @@ import org.openmuc.openiec61850.BdaInt32U;
 import org.openmuc.openiec61850.BdaInt64;
 import org.openmuc.openiec61850.BdaInt8;
 import org.openmuc.openiec61850.BdaInt8U;
+import org.openmuc.openiec61850.BdaQuality;
+import org.openmuc.openiec61850.BdaTimestamp;
 import org.openmuc.openiec61850.ServerSap;
+import org.openmuc.openiec61850.BdaQuality.Validity;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPubSub;
@@ -123,7 +127,7 @@ public class RedisSubscriber extends JedisPubSub {
 	public void onPSubscribe(String pattern, int subscribedChannels) {	
 	}
 
-	// TODO: handle more types (timestamps, booleans...)
+	// TODO: handle more types (booleans...)
 	private void setBdaValue(BasicDataAttribute bda, String valueString) {
 		if (bda instanceof BdaFloat32) {
 			float value = Float.parseFloat(valueString);
@@ -170,6 +174,21 @@ public class RedisSubscriber extends JedisPubSub {
 				value[0] = (byte) 0x80; // ON
 			}
 			((BdaDoubleBitPos) bda).setValue(value);
+		}
+		else if (bda instanceof BdaTimestamp) {
+			long time = Long.parseLong(valueString);
+			Date d = new java.util.Date(time);
+			((BdaTimestamp) bda).setDate(d);
+		}
+		else if (bda instanceof BdaQuality) {
+			Validity v = Validity.INVALID;
+			if (valueString.equals("0")) {
+				v = Validity.INVALID;
+			}
+			if (valueString.equals("1")) {
+				v = Validity.GOOD;
+			}
+			((BdaQuality) bda).setValidity(v);
 		}
 		else {
 			throw new IllegalArgumentException();
