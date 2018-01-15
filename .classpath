@@ -16,10 +16,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/jasn1-1.8.0.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="lib" path="lib/logback-classic-1.2.3.jar"/>
 	<classpathentry kind="lib" path="lib/logback-core-1.2.3.jar"/>
-	<classpathentry kind="lib" path="lib/openiec61850-1.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/jasn1-1.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/openiec61850-1.5.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

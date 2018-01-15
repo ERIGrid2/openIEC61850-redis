@@ -78,6 +78,7 @@
 			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
 			<DO name="TotW" type="MV" /><!-- O -->
 			<DO name="TotVAr" type="MV" /><!-- O -->
+			<DO name="TotVA" type="MV" /><!-- O -->
 			<DO name="PPV" type="DEL" /><!-- O -->
 			<DO name="PNV" type="WYE" /><!-- O -->
 			<DO name="W" type="WYE" /><!-- O -->
