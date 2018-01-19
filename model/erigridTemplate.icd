@@ -179,7 +179,30 @@
 			<DO name="DCPowStat" type="SPC" /><!-- O -->
 			<DO name="OpTmRs" type="SPC" /><!-- O -->
 		</LNodeType>
-
+		<LNodeType id="DRCS" lnClass="DRCS">
+			<DO name="Mod" type="INC" /><!-- M CommonLogicalNode -->
+			<DO name="Beh" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="Health" type="INS" /><!-- M CommonLogicalNode -->
+			<DO name="NamPlt" type="LPL" /><!-- M CommonLogicalNode -->
+			<DO name="ECPConn" type="SPS" /><!-- M -->
+			<DO name="AutoMan" type="SPS" /><!-- M -->
+			<DO name="Loc" type="SPS" /><!-- M -->
+			<DO name="ModOnConn" type="SPS" /><!-- M -->
+			<DO name="ModOnAval" type="SPS" /><!-- M -->
+			<DO name="ModOnUnav" type="SPS" /><!-- O -->
+			<DO name="ModOffAval" type="SPS" /><!-- M -->
+			<DO name="ModOffUnav" type="SPS" /><!-- M -->
+			<DO name="ModTest" type="SPS" /><!-- O -->
+			<DO name="ModStr" type="SPS" /><!-- O -->
+			<DO name="ModStop" type="SPS" /><!-- O -->
+			<DO name="SeqSt" type="INS" /><!-- O -->
+			<DO name="SeqPos" type="INS" /><!-- O -->
+			<DO name="LodModBase" type="SPS" /><!-- O -->
+			<DO name="LodModFol" type="SPS" /><!-- O -->
+			<DO name="LodModFxExp" type="SPS" /><!-- O -->
+			<DO name="LodModAval" type="SPS" /><!-- O -->
+			<DO name="DCPowStat" type="SPS" /><!-- O -->
+		</LNodeType>
 		<!-- Controllable analogue process value (APC) -->
 		<DOType id="APC" cdc="APC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
