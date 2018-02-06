@@ -203,6 +203,19 @@
 			<DO name="LodModAval" type="SPS" /><!-- O -->
 			<DO name="DCPowStat" type="SPS" /><!-- O -->
 		</LNodeType>
+		<LNodeType id="GGIO" lnClass="GGIO">
+			<DO name="LocKey" type="SPS" /><!-- O -->
+			<DO name="Loc" type="SPS" /><!-- O -->
+			<DO name="IntIn1" type="INS" /><!-- O -->
+			<DO name="Alm1" type="SPS" /><!-- O -->
+			<DO name="Wm1" type="SPS" /><!-- O -->
+			<DO name="Ind1" type="SPS" /><!-- O -->
+			<DO name="AnIn1" type="MV" /><!-- O -->
+			<DO name="AnOut1" type="APC" /><!-- O -->
+			<DO name="SPCSO1" type="SPC" /><!-- O -->
+			<DO name="DPCSO1" type="DPC" /><!-- O -->
+			<DO name="ISCSO1" type="INC" /><!-- O -->
+		</LNodeType>
 		<!-- Controllable analogue process value (APC) -->
 		<DOType id="APC" cdc="APC">
 			<DA name="SBO" fc="CO" bType="ObjRef" />
